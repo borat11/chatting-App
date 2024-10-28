@@ -9,11 +9,11 @@ const Login = () => {
   return (
     <>
       <ToastContainer />
-      <div className="flex items-center justify-center min-h-screen bg-gray-100 p-4">
-        <div className="flex flex-col md:flex-row items-center bg-white shadow-lg rounded-lg overflow-hidden w-full max-w-3xl border-t-4 border-b-4 border-blue-600">
-          <div className="w-full md:w-full py-6 flex items-center justify-center bg-blue-50">
-            <h1 className="text-2xl md:text-3xl font-semibold text-blue-700">
-              <TalkNest />
+      <div className="flex items-center justify-center h-screen bg-gray-100 p-4">
+      <div className="flex flex-col items-center bg-white shadow-lg rounded-lg overflow-hidden w-full max-w-3xl border-t-4 border-b-4 border-blue-600">
+        <div className="w-full py-6 flex items-center justify-center bg-blue-50">
+          <h1 className="text-3xl font-semibold text-blue-700">
+            <TalkNest />
             </h1>
           </div>
           <div className="flex flex-col md:flex-row w-full p-6 gap-4">
