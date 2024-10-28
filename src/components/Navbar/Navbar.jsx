@@ -9,6 +9,7 @@ import { CameraIcon } from '../../svg/Camera';
 import { useState } from 'react';
 import { createPortal } from 'react-dom';
 import Modals from '../Modals';
+import { NonActiveSingle } from '../../features/slice/ActiveSingleSlice';
 
 
 const Navbar = () => {
@@ -24,7 +25,9 @@ const Navbar = () => {
     signOut(auth).then(() => {
       navigate('/login')
       localStorage.removeItem('user')
+      dispatch(NonActiveSingle())
       dispatch(loggedOutUsers())
+
     }).catch((error) => {
       console.log(error)
     })

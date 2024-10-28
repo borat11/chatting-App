@@ -38,11 +38,7 @@ const Chatting = () => {
   const db = getDatabase();
   const storage = getStorage();
 
-  /**
-   * handleSendMessage:
-   * Handles sending of messages, which can be text, image, or audio.
-   * Prioritizes sending image > audio > text to ensure only one type is sent at a time.
-   */
+  
   const handleSendMessage = async () => {
     // Prevent sending if all message types are empty
     if (message.trim() === "" && !audioBlob && !selectedImage) return;
@@ -346,6 +342,7 @@ const Chatting = () => {
   return (
     <div className="py-2 bg-white relative"> {/* 'relative' positioning for conditional elements */}
       {/* Header */}
+      
       <div className="py-1 bg-[#212121] px-4 border-gray-700">
         <div className="flex items-center gap-x-2">
           <div className="w-10 h-10 rounded-full bg-orange-200 overflow-hidden">
@@ -385,8 +382,8 @@ const Chatting = () => {
                     {/* Sent Message */}
                     {item.message && (
                       <div className="ml-2  justify-end">
-                        <div className="chat chat-end">
-                          <div className="chat-bubble chat-bubble-primary">
+                        <div className="">
+                          <div className="bg-cyan-500 rounded-lg m-2">
                         <p className="text-white font-mono text-2xl  m-2 rounded-md inline-block break-words max-w-full">
                           {item.message}
                         </p>
@@ -444,9 +441,9 @@ const Chatting = () => {
                       </div>
                     ) : (
                       <div className="">
-                        <div className="chat chat-start">
-                          <div className="chat-bubble chat-bubble-info">
-                        <p className="text-white font-mono text-2xl  m-2 rounded-md inline-block break-words max-w-full">
+                        <div className="">
+                          <div className="bg-cyan-500 rounded-lg m-2">
+                        <p className="text-black font-mono text-2xl  m-2 rounded-md inline-block break-words max-w-full">
                           {item.message}
                         </p>
                         </div></div>

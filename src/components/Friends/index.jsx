@@ -42,9 +42,12 @@ const Friends = () => {
     
     if (confirmUnfriend) {
       // Proceed with unfriending
+
       try {
         await remove(ref(db, "friends/" + data.id));
         alert("You have unfriended this user.");
+        dispatch(NonActiveSingle())
+        navigate("/")
         // Optionally, you can notify the other user they are no longer friends by saving this info in the database or using other notifications.
       } catch (error) {
         console.error("Error unfriending user:", error);
